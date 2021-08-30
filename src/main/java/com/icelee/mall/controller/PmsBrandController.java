@@ -7,6 +7,7 @@ import com.icelee.mall.service.PmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ import java.util.List;
  */
 @Api(tags = "PmsBrandController", description = "商品品牌管理")
 @Controller
+@Log4j2
 @RequestMapping("/brand")
 public class PmsBrandController {
     @Autowired

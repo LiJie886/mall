@@ -1,6 +1,7 @@
 package com.icelee.mall.service.impl;
 
 import com.icelee.mall.service.RedisService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @date: 2021.08.18 20:54
  */
 @Service
+@Log4j2
 public class RedisServiceImpl implements RedisService {
 
     @Resource
