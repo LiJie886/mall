@@ -3,6 +3,7 @@ package com.icelee.mall.service.impl;
 import com.icelee.mall.common.api.CommonResult;
 import com.icelee.mall.service.RedisService;
 import com.icelee.mall.service.UmsMemberService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ import java.util.Random;
  * @date: 2021.08.27 15:58
  */
 @Service
+@Log4j2
 public class UmsMemberServiceImpl implements UmsMemberService {
     @Autowired
     private RedisService redisService;

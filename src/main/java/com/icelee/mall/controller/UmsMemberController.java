@@ -4,6 +4,7 @@ import com.icelee.mall.common.api.CommonResult;
 import com.icelee.mall.service.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date: 2021.08.27 15:55
  */
 @Controller
+@Log4j2
 @Api(tags = "UmsMemberController", description = "会员登录注册管理")
 @RequestMapping("/sso")
 public class UmsMemberController {

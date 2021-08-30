@@ -6,6 +6,8 @@ import com.icelee.mall.entity.PmsBrand;
 import com.icelee.mall.service.PmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,7 @@ import java.util.List;
  */
 @Api(tags = "PmsBrandController", description = "商品品牌管理")
 @Controller
+@Log4j2
 @RequestMapping("/brand")
 public class PmsBrandController {
     @Autowired
@@ -85,8 +88,8 @@ public class PmsBrandController {
     @ApiOperation("分页展示列表")
     @PostMapping("/list")
     @ResponseBody
-    public CommonResult<CommonPage<PmsBrand>> listBrand(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                                        @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize) {
+    public CommonResult<CommonPage<PmsBrand>> listBrand(@RequestParam(value = "pageNum", defaultValue = "1")@ApiParam("页码") Integer pageNum,
+                                                        @RequestParam(value = "pageSize", defaultValue = "3")@ApiParam("每页数量") Integer pageSize) {
         List<PmsBrand> brandList = pmsBrandService.listBrand(pageNum, pageSize);
         return CommonResult.success(CommonPage.restPage(brandList));
     }

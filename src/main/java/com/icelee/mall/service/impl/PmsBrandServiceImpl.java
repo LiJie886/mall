@@ -3,6 +3,7 @@ package com.icelee.mall.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.icelee.mall.entity.PmsBrand;
 import com.icelee.mall.service.PmsBrandService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.icelee.mall.mapper.PmsBrandMapper;
@@ -14,6 +15,7 @@ import java.util.List;
  * @date: 2021.08.18 13:40
  */
 @Service
+@Log4j2
 public class PmsBrandServiceImpl implements PmsBrandService {
     @Autowired
     private PmsBrandMapper pmsBrandMapper;
