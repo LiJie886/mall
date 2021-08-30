@@ -1,10 +1,11 @@
 package com.icelee.mall.mapper;
 
 import com.icelee.mall.entity.PmsBrand;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-
+@Mapper
 public interface PmsBrandMapper {
 
 

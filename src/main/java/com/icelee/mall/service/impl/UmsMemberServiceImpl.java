@@ -1,23 +1,23 @@
 package com.icelee.mall.service.impl;
 
-import com.alibaba.druid.util.StringUtils;
 import com.icelee.mall.common.api.CommonResult;
 import com.icelee.mall.service.RedisService;
 import com.icelee.mall.service.UmsMemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import java.util.Random;
 
 /**
  * @Description: 会员管理Service实现类
  * @author: lijie
- * @date: 2021.08.18 21:03
+ * @date: 2021.08.27 15:58
  */
 @Service
 public class UmsMemberServiceImpl implements UmsMemberService {
-    @Resource
+    @Autowired
     private RedisService redisService;
     @Value("${redis.key.prefix.authCode}")
     private String REDIS_KEY_PREFIX_AUTH_CODE;
@@ -52,5 +52,4 @@ public class UmsMemberServiceImpl implements UmsMemberService {
             return CommonResult.failed("验证码不正确");
         }
     }
-
 }
